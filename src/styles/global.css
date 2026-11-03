@@ -41,6 +41,8 @@ img { max-width: 100%; }
 .site-header { position: relative; z-index: 10; border-bottom: 1px solid rgba(255,255,255,.06); background: rgba(8,18,37,.72); backdrop-filter: blur(18px); }
 .header-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .brand, .footer-brand { display: inline-flex; align-items: center; gap: 11px; white-space: nowrap; font-size: 21px; font-weight: 800; letter-spacing: -.045em; }
+.brand-group { display: inline-flex; align-items: center; gap: 22px; }
+.header-slogan { padding-left: 20px; border-left: 1px solid rgba(176,205,238,.2); color: #9cacbf; font-size: 13px; font-weight: 600; letter-spacing: .08em; white-space: nowrap; }
 .brand img { width: 42px; height: 42px; object-fit: contain; }
 .brand-name strong, .footer-brand strong { color: var(--cyan); }
 .desktop-nav { display: flex; align-items: center; gap: 36px; margin-left: auto; }
@@ -145,7 +147,6 @@ img { max-width: 100%; }
 .footer-main { min-height: 112px; display: flex; align-items: center; gap: 28px; }
 .footer-brand { font-size: 18px; }
 .footer-brand img { width: 34px; height: 34px; }
-.footer-slogan { color: #879cb7; font-size: 12px; }
 .footer-nav { display: flex; gap: 23px; margin-left: auto; color: #9aadc5; font-size: 12px; }
 .footer-nav a:hover { color: var(--cyan); }
 .footer-bottom { min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(255,255,255,.055); color: #647b98; font-size: 10px; letter-spacing: .05em; }
@@ -160,6 +161,8 @@ img { max-width: 100%; }
 @media (max-width: 720px) {
   .container { width: min(580px, calc(100% - 36px)); }
   .header-inner { min-height: 72px; gap: 14px; }
+  .brand-group { gap: 13px; }
+  .header-slogan { padding-left: 12px; font-size: 11px; letter-spacing: .04em; }
   .brand { font-size: 19px; gap: 8px; }
   .brand img { width: 36px; height: 36px; }
   .desktop-nav, .header-cta { display: none; }
