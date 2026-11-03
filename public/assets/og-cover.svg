@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#081225"/><stop offset="1" stop-color="#142b48"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#20dad2" stop-opacity=".25"/><stop offset="1" stop-color="#20dad2" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="900" cy="310" r="390" fill="url(#glow)"/>
+  <g transform="translate(700 100) scale(.36)">
+    <path fill="#35E9DB" d="M554 113 C353 74 164 228 154 440 C144 647 300 823 502 833 C581 837 659 809 716 762 L653 700 C608 731 561 744 504 745 C345 740 244 615 244 465 C244 313 366 193 535 202 Z"/>
+    <path fill="#6885FF" d="M591 124 C716 160 791 270 798 391 L706 391 C702 303 643 231 565 210 Z"/>
+    <path fill="#35E9DB" d="M707 431 H802 C800 517 781 573 739 636 L674 570 C697 528 706 477 707 431 Z"/>
+    <path fill="#35E9DB" d="M437 446 L616 534 L873 854 L736 804 L622 697 Z"/>
+  </g>
+  <text x="82" y="190" fill="#35E9DB" font-family="Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="7">QIANJIE AI</text>
+  <text x="82" y="300" fill="#EEF6FF" font-family="Arial,sans-serif" font-size="64" font-weight="700">潜界 AI</text>
+  <text x="82" y="382" fill="#EEF6FF" font-family="Arial,sans-serif" font-size="42" font-weight="600">为创业者而生</text>
+  <text x="82" y="460" fill="#9CACBF" font-family="Arial,sans-serif" font-size="25">让 AI 从技术能力，变成真实价值。</text>
+</svg>
