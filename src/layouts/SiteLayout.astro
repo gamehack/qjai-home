@@ -5,10 +5,11 @@ const {
   title = '潜界 AI',
   description = '潜界 AI，专注探索 AI 在真实场景中的应用，打造简单、易用、真正解决问题的产品。',
   canonical,
+  robots = 'index,follow,max-image-preview:large',
 } = Astro.props;
 
 const pageTitle = title === '潜界 AI' ? '潜界 AI｜为创业者而生' : `${title}｜潜界 AI`;
-const canonicalUrl = canonical ?? new URL(Astro.url.pathname, 'https://qjai.org').toString();
+const canonicalUrl = canonical === false ? null : (canonical ?? new URL(Astro.url.pathname, 'https://qjai.org').toString());
 const organization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -27,16 +28,16 @@ const organization = {
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#081225" />
     <meta name="description" content={description} />
-    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="robots" content={robots} />
     <title>{pageTitle}</title>
-    <link rel="canonical" href={canonicalUrl} />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" as="image" href="/assets/qianjie-ai-mark.svg" type="image/svg+xml" fetchpriority="high" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="潜界 AI" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalUrl} />
+    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
     <meta property="og:image" content="https://qjai.org/assets/og-cover.svg" />
     <meta property="og:image:type" content="image/svg+xml" />
     <meta name="twitter:card" content="summary_large_image" />
