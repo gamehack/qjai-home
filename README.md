@@ -6,11 +6,10 @@
 
 这是品牌官网，不是内容聚合门户或项目导航页。
 
-- 介绍潜界 AI 的品牌定位、产品理念和正式自有产品。
+- 介绍潜界 AI 的品牌定位、理念与发展方向。
 - 不聚合 CMS 文章、播客节目或在线工具。
 - 不读取其他业务系统的数据，不依赖 CMS、播客、工具站 API。
-- 只展示经过确认、正式纳入潜界 AI 品牌的产品。
-- 暂无正式对外产品时，产品页明确展示空状态，不虚构产品。
+- 现阶段不设置产品目录页；正式自有产品发布后再增加产品展示。
 
 ## 技术
 
@@ -30,8 +29,8 @@ npm run build
 ## 结构
 
 - `src/pages/index.astro`：首页
-- `src/pages/products.astro`：正式产品展示
 - `src/pages/about.astro`：品牌与公司介绍
+- `public/_redirects`：旧产品页地址重定向到首页
 - `src/styles/global.css`：全局设计系统
 - `public/assets/qianjie-ai-mark.svg`：潜界 AI 官方破界 Q 标志
 
