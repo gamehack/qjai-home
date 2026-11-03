@@ -43,6 +43,9 @@ img { max-width: 100%; }
 .brand, .footer-brand { display: inline-flex; align-items: center; gap: 11px; white-space: nowrap; font-size: 21px; font-weight: 800; letter-spacing: -.045em; }
 .brand-group { display: inline-flex; align-items: center; gap: 22px; }
 .header-slogan { padding-left: 20px; border-left: 1px solid rgba(176,205,238,.2); color: #9cacbf; font-size: 13px; font-weight: 600; letter-spacing: .08em; white-space: nowrap; }
+.header-links { display: flex; align-items: center; gap: 26px; margin-left: auto; }
+.header-link { color: #a9b8cc; font-size: 13px; font-weight: 650; letter-spacing: .04em; transition: color .2s; white-space: nowrap; }
+.header-link:hover { color: var(--cyan); }
 .brand img { width: 42px; height: 42px; object-fit: contain; }
 .brand-name strong, .footer-brand strong { color: var(--cyan); }
 .desktop-nav { display: flex; align-items: center; gap: 36px; margin-left: auto; }
@@ -157,8 +160,11 @@ img { max-width: 100%; }
   .header-inner { min-height: 72px; gap: 14px; }
   .brand-group { gap: 13px; }
   .header-slogan { padding-left: 12px; font-size: 11px; letter-spacing: .04em; }
+  .header-links { gap: 14px; }
+  .header-link { font-size: 12px; }
   .brand { font-size: 19px; gap: 8px; }
   .brand img { width: 36px; height: 36px; }
+  .brand-group { min-width: 0; }
   .desktop-nav, .header-cta { display: none; }
   .mobile-nav { display: block; margin-left: auto; }
   .hero { padding: 66px 0 72px; }
@@ -181,6 +187,16 @@ img { max-width: 100%; }
   .footer-nav { margin-left: 0; }
   .footer-bottom { align-items: flex-start; flex-direction: column; justify-content: center; padding-top: 15px; padding-bottom: 15px; gap: 5px; }
 }
+
+@media (max-width: 400px) {
+  .brand-group { gap: 8px; }
+  .brand { gap: 6px; font-size: 16px; }
+  .brand img { width: 32px; height: 32px; }
+  .header-slogan { padding-left: 8px; font-size: 10px; letter-spacing: 0; }
+  .header-links { gap: 10px; }
+  .header-link { font-size: 11px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
