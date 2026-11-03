@@ -131,12 +131,6 @@ img { max-width: 100%; }
 .about-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 85px; }
 .about-grid h2 { margin: 0; font-size: clamp(30px, 3.5vw, 44px); letter-spacing: -.05em; }
 .about-copy p { margin: 0 0 19px; color: #a4b5ca; font-size: 14px; line-height: 2.05; }
-.company-section { padding: 0 0 110px; }
-.company-panel { display: flex; justify-content: space-between; align-items: center; gap: 35px; padding: 38px 42px; border: 1px solid var(--line); border-radius: 17px; background: rgba(15,29,53,.8); }
-.company-panel h2 { margin: 0; font-size: 23px; }
-.company-panel > div:first-child > p:last-child { margin: 10px 0 0; color: var(--muted); font-size: 13px; }
-.company-name { display: grid; grid-template-columns: 48px 1fr; column-gap: 14px; align-items: center; }
-.company-mark { grid-row: span 2; width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid rgba(53,233,219,.35); border-radius: 14px; color: var(--cyan); font-size: 25px; font-weight: 800; }
 .company-name strong { font-size: 14px; }
 .company-name small { color: var(--subtle); font-size: 10px; letter-spacing: .16em; }
 
@@ -182,8 +176,6 @@ img { max-width: 100%; }
   .products-empty-section { padding-bottom: 75px; }
   .empty-product-card { padding: 42px 22px; }
   .about-grid { grid-template-columns: 1fr; gap: 25px; }
-  .company-section { padding-bottom: 75px; }
-  .company-panel { align-items: flex-start; flex-direction: column; padding: 29px 24px; }
   .footer-main { align-items: flex-start; flex-wrap: wrap; padding-top: 25px; padding-bottom: 22px; gap: 12px 20px; }
   .footer-slogan { width: 100%; margin: 0; }
   .footer-nav { margin-left: 0; }
