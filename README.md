@@ -45,3 +45,14 @@ npm run build
 ## 开源
 
 本项目采用 MIT License。MIT 授权不包含潜界 AI 商标、品牌名称或 Logo 的使用许可。
+## Cloudflare Pages
+
+- Project: `qjai-home`
+- Production branch: `main`
+- Build command: `npm install --no-audit --no-fund && npm run build`
+- Output directory: `dist`
+- Root directory: `/`
+- Preview deployment: enabled
+- No Pages environment variables or secrets are required.
+
+The custom domains are attached only after the preview deployment is verified. The production hostname is `qjai.org`; `www.qjai.org` is a secondary entry point and redirects to the canonical root domain.
