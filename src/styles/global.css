@@ -130,17 +130,26 @@ img { max-width: 100%; }
 .art-topline { top: 22px; }
 .art-bottomline { bottom: 21px; }
 
-/* Podcast visual */
-.podcast-art { display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 43%, rgba(53,233,219,.14), transparent 39%), linear-gradient(145deg, #122642, #091528 76%); }
-.audio-stage { position: relative; width: 250px; height: 250px; display: grid; place-items: center; }
-.audio-ring { position: absolute; border: 1px solid rgba(53,233,219,.28); border-radius: 50%; }
-.ring-a { width: 100%; height: 100%; border-style: dashed; transform: rotate(23deg); }
-.ring-b { width: 78%; height: 78%; border-color: rgba(104,133,255,.42); }
-.audio-mark { width: 112px; height: 112px; display: grid; place-items: center; border: 1px solid rgba(53,233,219,.25); border-radius: 30px; background: rgba(8,18,37,.88); box-shadow: 0 0 60px rgba(53,233,219,.12); transform: rotate(-7deg); }
-.audio-mark img { width: 78px; height: 78px; transform: rotate(7deg); }
-.waveform { position: absolute; left: 12%; right: 12%; bottom: 76px; height: 50px; display: flex; align-items: center; justify-content: center; gap: 5px; opacity: .9; }
-.waveform i { width: 4px; height: var(--bar-height); border-radius: 5px; background: linear-gradient(180deg, #8ca4ff, var(--cyan)); box-shadow: 0 0 12px rgba(53,233,219,.16); }
-.podcast-art::after { content: ""; position: absolute; width: 70%; height: 1px; bottom: 100px; background: linear-gradient(90deg, transparent, rgba(53,233,219,.28), transparent); }
+/* Podcast visual — reuse the official podcast cover */
+.podcast-art {
+  width: min(100%, 460px);
+  aspect-ratio: 1;
+  min-height: 0;
+  justify-self: center;
+  overflow: hidden;
+  border: 0;
+  border-radius: 22px;
+  background: transparent;
+  box-shadow: none;
+}
+.podcast-cover-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 28px 90px rgba(0, 3, 15, .34);
+}
 
 /* Blog visual */
 .blog-grid { margin-bottom: 86px; }
