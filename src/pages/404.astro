@@ -1,7 +1,7 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 ---
-<SiteLayout title="页面不存在" description="你访问的页面不存在。">
+<SiteLayout title="页面不存在" description="你访问的页面不存在。" robots="noindex,follow" canonical={false}>
   <section class="page-hero error-page">
     <div class="container page-hero-inner">
       <p class="section-eyebrow">404 · PAGE NOT FOUND</p>
