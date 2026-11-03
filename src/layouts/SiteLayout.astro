@@ -60,7 +60,6 @@ const organization = {
 
         <nav class="desktop-nav" aria-label="主导航">
           <a class:list={['nav-link', { active: Astro.url.pathname === '/' }]} href="/">首页</a>
-          <a class:list={['nav-link', { active: Astro.url.pathname.startsWith('/products') }]} href="/products/">产品</a>
           <a class:list={['nav-link', { active: Astro.url.pathname.startsWith('/about') }]} href="/about/">关于我们</a>
         </nav>
 
@@ -68,7 +67,6 @@ const organization = {
           <summary aria-label="打开导航"><span></span><span></span></summary>
           <nav aria-label="移动端主导航">
             <a href="/">首页</a>
-            <a href="/products/">产品</a>
             <a href="/about/">关于我们</a>
           </nav>
         </details>
@@ -87,7 +85,6 @@ const organization = {
         </a>
         <p class="footer-slogan">为创业者而生。</p>
         <nav class="footer-nav" aria-label="页脚导航">
-          <a href="/products/">产品</a>
           <a href="/about/">关于我们</a>
         </nav>
       </div>
