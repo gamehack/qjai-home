@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://qjai.org/sitemap.xml
+Sitemap: https://qjai.org/sitemap-index.xml

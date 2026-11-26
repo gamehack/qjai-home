@@ -1,0 +1,54 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+const email = 'gameprogramhack@gmail.com';
+---
+<SiteLayout
+  title="联系我们"
+  description="联系潜界 AI：内容反馈与勘误、商业合作、工具使用问题与隐私相关请求，均可通过电子邮件与我们联系。"
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-eyebrow">CONTACT · 联系我们</p>
+      <h1>欢迎与潜界 AI<span>取得联系。</span></h1>
+      <p class="page-lead">
+        无论是内容反馈、勘误、合作意向，还是工具使用中遇到的问题，都可以通过电子邮件联系我们。
+        我们会尽快阅读并回复。
+      </p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container">
+      <div class="info-grid">
+        <article class="info-card">
+          <h3>电子邮件</h3>
+          <p><a href={`mailto:${email}`}>{email}</a><br />适用于所有类型的咨询与反馈。</p>
+        </article>
+        <article class="info-card">
+          <h3>微信公众号</h3>
+          <p>搜索“潜界AI”关注公众号，获取与博客同步发布的研究内容。</p>
+        </article>
+        <article class="info-card">
+          <h3>Bilibili</h3>
+          <p>视频内容正在筹备中。<a href="https://space.bilibili.com/3546926182042472" target="_blank" rel="noopener noreferrer">访问 B 站主页 ↗</a></p>
+        </article>
+      </div>
+
+      <div class="prose">
+        <h2>来信时请说明</h2>
+        <ul>
+          <li><strong>内容反馈与勘误：</strong>请附上文章标题或链接，以及需要更正的具体内容和依据。</li>
+          <li><strong>工具使用问题：</strong>请说明使用的工具名称、操作步骤、浏览器与设备类型，如有截图更好。</li>
+          <li><strong>商业合作：</strong>请简要介绍你的公司或项目、合作形式与预期时间。</li>
+          <li><strong>隐私相关请求：</strong>如需咨询本站如何处理数据，请在邮件标题中注明“隐私”，详见<a href="/privacy/">隐私政策</a>。</li>
+        </ul>
+        <p>
+          请勿通过邮件发送密码、银行卡号或身份证件等敏感信息。我们不会主动向你索取此类信息。
+        </p>
+        <p>
+          想先了解我们是谁？请阅读<a href="/about/">关于我们</a>，或浏览本站的<a href="/articles/">文章</a>。
+        </p>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

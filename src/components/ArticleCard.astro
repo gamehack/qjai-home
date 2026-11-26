@@ -1,0 +1,21 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  summary: string;
+  meta?: string;
+  tag?: string | null;
+  external?: boolean;
+}
+const { href, title, summary, meta, tag, external = false } = Astro.props;
+---
+<a
+  class="article-card"
+  href={href}
+  {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+>
+  {tag && <span class="article-tag">{tag}</span>}
+  <h3>{title}</h3>
+  <p>{summary}</p>
+  {meta && <span class="article-meta">{meta}</span>}
+</a>
