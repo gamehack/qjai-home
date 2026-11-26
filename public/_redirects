@@ -1,6 +1,4 @@
 /products / 301
 /products/ / 301
 /products/* / 301
-/about / 301
-/about/ / 301
-/about/* / 301
+/sitemap.xml /sitemap-index.xml 301

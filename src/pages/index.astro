@@ -1,5 +1,14 @@
 ---
+import { getCollection } from 'astro:content';
 import SiteLayout from '../layouts/SiteLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getCmsArticles } from '../lib/cms';
+import { formatDate } from '../lib/format';
+
+const articles = (await getCollection('articles')).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime() || a.data.title.localeCompare(b.data.title, 'zh-CN'),
+);
+const cmsArticles = await getCmsArticles(4);
 ---
 <SiteLayout
   title="潜界 AI"
@@ -201,6 +210,52 @@ import SiteLayout from '../layouts/SiteLayout.astro';
           <div class="console-footer"><span>BUILT FOR ENTREPRENEURS</span><span>● SYSTEM READY</span></div>
         </div>
       </div>
+    </div>
+  </section>
+  <section id="articles" class="articles-section">
+    <div class="container">
+      <div class="list-block">
+        <div class="list-heading">
+          <div>
+            <p class="section-eyebrow">05 / ARTICLES</p>
+            <h2>原创长文</h2>
+          </div>
+          <p>关于一人公司、AI Agent、需求验证、增长指标与定价的系统性方法，帮助创业者做出更好的判断。</p>
+        </div>
+        <div class="article-list">
+          {articles.map((a) => (
+            <ArticleCard
+              href={`/articles/${a.id}/`}
+              title={a.data.title}
+              summary={a.data.description}
+              tag={a.data.category}
+              meta={formatDate(a.data.pubDate)}
+            />
+          ))}
+        </div>
+        <p class="list-note"><a class="text-link" href="/articles/">查看全部文章 <span aria-hidden="true">→</span></a></p>
+      </div>
+
+      {cmsArticles.length > 0 && (
+        <div class="list-block">
+          <div class="list-heading">
+            <h2>博客近期研究</h2>
+            <p>潜界 AI 博客最新发布的产品与商业情报，摘要取自原文。</p>
+          </div>
+          <div class="article-list">
+            {cmsArticles.map((a) => (
+              <ArticleCard
+                href={a.url}
+                title={a.title}
+                summary={a.summary}
+                tag={a.category}
+                meta={[formatDate(a.date), 'cms.qjai.org'].filter(Boolean).join(' · ')}
+                external
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   </section>
 </SiteLayout>

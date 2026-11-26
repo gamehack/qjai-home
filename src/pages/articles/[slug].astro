@@ -1,0 +1,70 @@
+---
+import { getCollection, render } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { formatDate, isoDate } from '../../lib/format';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map((entry) => ({ params: { slug: entry.id }, props: { entry, all: articles } }));
+}
+
+const { entry, all } = Astro.props;
+const { Content } = await render(entry);
+const { title, description, pubDate, updatedDate, category, related } = entry.data;
+const relatedEntries = related
+  .map((id) => all.find((a) => a.id === id))
+  .filter((a): a is (typeof all)[number] => Boolean(a));
+const url = `https://qjai.org/articles/${entry.id}/`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished: isoDate(pubDate),
+  dateModified: isoDate(updatedDate ?? pubDate),
+  inLanguage: 'zh-CN',
+  mainEntityOfPage: url,
+  author: { '@type': 'Organization', name: '潜界 AI', url: 'https://qjai.org/' },
+  publisher: {
+    '@type': 'Organization',
+    name: '潜界 AI',
+    logo: { '@type': 'ImageObject', url: 'https://qjai.org/assets/qianjie-ai-mark.svg' },
+  },
+};
+---
+<SiteLayout title={title} description={description} canonical={url} ogType="article" jsonLd={jsonLd}>
+  <article>
+    <header class="page-hero">
+      <div class="container">
+        <p class="section-eyebrow"><a href="/articles/">文章</a> · {category}</p>
+        <h1>{title}</h1>
+        <p class="page-lead">{description}</p>
+        <div class="page-meta">
+          <span>作者：潜界 AI</span>
+          <time datetime={isoDate(pubDate)}>发布于 {formatDate(pubDate)}</time>
+          {updatedDate && <time datetime={isoDate(updatedDate)}>更新于 {formatDate(updatedDate)}</time>}
+        </div>
+      </div>
+    </header>
+
+    <div class="page-body">
+      <div class="container">
+        <div class="prose">
+          <Content />
+        </div>
+
+        {relatedEntries.length > 0 && (
+          <aside class="related-articles" aria-label="相关阅读">
+            <h2>相关阅读</h2>
+            <div class="article-list">
+              {relatedEntries.map((a) => (
+                <ArticleCard href={`/articles/${a.id}/`} title={a.data.title} summary={a.data.description} tag={a.data.category} />
+              ))}
+            </div>
+          </aside>
+        )}
+      </div>
+    </div>
+  </article>
+</SiteLayout>
